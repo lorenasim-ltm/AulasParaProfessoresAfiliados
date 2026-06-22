@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materiais Educativos Prontos - Alinhados à BNCC 2026</title>
+    <style>
+        /* --- Configurações Gerais & Reset --- */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4 {
+            margin: 0;
+            font-weight: 700;
+        }
+        p {
+            margin: 0 0 15px 0;
+        }
+        a {
+            text-decoration: none;
+        }
+
+        /* --- Cores e Variáveis Específicas --- */
+        :root {
+            --primary-color: #0284c7; /* Azul Principal */
+            --primary-dark: #0369a1;
+            --accent-color: #f97316;  /* Laranja de Destaque / CTA */
+            --accent-hover: #ea580c;
+            --text-dark: #0f172a;
+            --text-muted: #64748b;
+            --bg-light: #ffffff;
+            --bg-neutral: #f1f5f9;
+            --success: #16a34a;
+        }
+
+        /* --- Barra de Topo --- */
+        .top-bar {
+            background-color: var(--text-dark);
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 15px;
+            font-size: 11pt;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        .top-bar span {
+            color: var(--accent-color);
+        }
+
+        /* --- Cabeçalho --- */
+        .main-header {
+            background-color: var(--bg-light);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            padding: 15px 5%;
+            display: table;
+            width: 100%;
+        }
+        .header-container {
+            display: table-cell;
+            vertical-align: middle;
+        }
+        .logo {
+            font-size: 16pt;
+            color: var(--primary-color);
+            font-weight: 800;
+            float: left;
+        }
+        .logo span {
+            color: var(--text-dark);
+        }
+        .nav-menu {
+            float: right;
+            margin: 5px 0 0 0;
+            padding: 0;
+            list-style: none;
+        }
+        .nav-menu li {
+            display: inline-block;
+            margin-left: 20px;
+        }
+        .nav-menu a {
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 11pt;
+        }
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        /* --- Seção Hero (Dobra Principal) --- */
+        .hero-section {
+            background-color: #0f172a; /* Fundo Escuro para Contraste Forte */
+            color: #ffffff;
+            padding: 60px 5%;
+            display: table;
+            width: 100%;
+        }
+        .hero-container {
+            display: table-row;
+        }
+        .hero-col-left {
+            display: table-cell;
+            width: 55%;
+            vertical-align: middle;
+            padding-right: 40px;
+        }
+        .hero-col-right {
+            display: table-cell;
+            width: 45%;
+            vertical-align: middle;
+            text-align: center;
+        }
+        .hero-section h1 {
+            font-size: 26pt;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .hero-section h1 span {
+            color: #f43f5e; /* Destaque emocional na dor */
+        }
+        .hero-section h3 {
+            font-size: 13pt;
+            font-weight: 400;
+            color: #cbd5e1;
+            margin-bottom: 30px;
+        }
+        
+        /* Lista de Checkmarks */
+        .checkmark-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 35px 0;
+        }
+        .checkmark-list li {
+            font-size: 11pt;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+        .checkmark-list .icon {
+            color: var(--success);
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 13pt;
+        }
+
+        /* Botão CTA Principal */
+        .btn-cta {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #ffffff;
+            padding: 18px 36px;
+            font-size: 13pt;
+            font-weight: 700;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(249, 115, 22, 0.4);
+            transition: transform 0.2s, background-color 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .btn-cta:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Placeholder da Imagem Hero */
+        .hero-image-box {
+            background: linear-gradient(135deg, #1e293b, #334155);
+            border: 2px dashed #475569;
+            border-radius: 12px;
+            padding: 80px 20px;
+            color: #94a3b8;
+            font-weight: 600;
+        }
+
+        /* --- Segunda Dobra (Benefícios) --- */
+        .benefits-section {
+            padding: 60px 5%;
+            background-color: var(--bg-light);
+            text-align: center;
+        }
+        .benefits-section h2 {
+            font-size: 20pt;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+        .benefits-subtitle {
+            font-size: 12pt;
+            color: var(--text-muted);
+            margin-bottom: 45px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .grid-container {
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+        }
+        .benefit-card {
+            display: table-cell;
+            padding: 20px;
+            background-color: var(--bg-neutral);
+            border-radius: 8px;
+            border: 8px solid var(--bg-light); 
+            vertical-align: top;
+            text-align: left;
+        }
+        .benefit-card .icon-box {
+            font-size: 24pt;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        .benefit-card h4 {
+            font-size: 12pt;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+        .benefit-card p {
+            font-size: 10pt;
+            color: var(--text-muted);
+            margin-bottom: 0;
+        }
+
+        /* --- Seção Grid de Disciplinas --- */
+        .disciplines-section {
+            padding: 60px 5%;
+            background-color: var(--bg-neutral);
+            text-align: center;
+        }
+        .disciplines-section h2 {
+            font-size: 20pt;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+        .category-title {
+            font-size: 14pt;
+            color: var(--primary-dark);
+            margin: 30px 0 15px 0;
+            text-align: left;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 10px;
+        }
+        .disciplines-table {
+            display: table;
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 15px;
+        }
+        .disciplines-row {
+            display: table-row;
+        }
+        .discipline-item {
+            display: table-cell;
+            background-color: var(--bg-light);
+            padding: 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 10.5pt;
+            color: var(--text-dark);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            transition: all 0.2s;
+            border: 1px solid #e2e8f0;
+            cursor: pointer;
+            width: 25%;
+            vertical-align: middle;
+        }
+        .discipline-item:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #f0f9ff;
+            transform: translateY(-2px);
+        }
+
+        /* --- Seção Prova Social --- */
+        .stats-section {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            padding: 40px 5%;
+            text-align: center;
+        }
+        .stats-table {
+            display: table;
+            width: 100%;
+        }
+        .stats-col {
+            display: table-cell;
+            width: 33.33%;
+        }
+        .stats-num {
+            font-size: 28pt;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .stats-label {
+            font-size: 11pt;
+            color: #e0f2fe;
+            font-weight: 500;
+        }
+
+        /* --- Limitações Responsivas Básicas via Layout Table alternativo --- */
+        @media (max-width: 768px) {
+            .hero-col-left, .hero-col-right, .benefit-card, .discipline-item, .stats-col {
+                display: block !important;
+                width: 100% !important;
+                padding-right: 0 !important;
+                margin-bottom: 25px;
+            }
+            .main-header { text-align: center; }
+            .logo, .nav-menu { float: none !important; display: block; margin: 10px auto; }
+            .nav-menu li { margin: 0 10px; }
+            .hero-section h1 { font-size: 20pt; }
+            .disciplines-table { display: block; }
+            .disciplines-row { display: block; }
+        }
+    </style>
+    <!-- Importação de Fonte Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- 1. BARRA DE TOPO -->
+    <div class="top-bar">
+        🔥 ATUALIZADO BNCC 2026: Garanta seus materiais didáticos com desconto exclusivo hoje!
+    </div>
+
+    <!-- 2. CABEÇALHO (HEADER) -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">Educa<span>Aulas</span></div>
+            <ul class="nav-menu">
+                <li><a href="#disciplinas">Disciplinas</a></li>
+                <li><a href="#beneficios">Planos de Aula</a></li>
+                <li><a href="https://wa.me/5592982265239" target="_blank" style="color:var(--success);">Suporte WhatsApp</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- 3. DOBRA PRINCIPAL (HERO) -->
+    <section class="hero-section">
+        <div class="hero-container">
+            <!-- Coluna de Cópia e Conversão -->
+            <div class="hero-col-left">
+                <h1>Chega de passar o seu <span>domingo preparando aula!</span></h1>
+                <h3>Tenha acesso a planejamentos anuais completos, dinâmicos e totalmente editáveis. Recupere o seu tempo livre e reduza a exaustão da rotina docente.</h3>
+                
+                <ul class="checkmark-list">
+                    <li><span class="icon">✓</span> 100% Editáveis no Word e PowerPoint</li>
+                    <li><span class="icon">✓</span> Totalmente alinhados às diretrizes da BNCC 2026</li>
+                    <li><span class="icon">✓</span> Conteúdo completo: Slides Animados + Exercícios com Gabarito</li>
+                </ul>
+
+                <!-- Direciona o professor direto para a seção de escolher a matéria -->
+                <a href="#disciplinas" class="btn-cta">Escolher Minha Disciplina</a>
+            </div>
+            
+            <!-- Coluna Visual -->
+            <div class="hero-col-right">
+                <div class="hero-image-box">
+                    [ Materiais Didáticos Prontos ]<br>
+                    <span style="font-size: 10pt; font-weight: normal; color: #cbd5e1; display:block; margin-top:10px;">Planos de Aula & Slides 100% Editáveis</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. SEGUNDA DOBRA (PROPOSTA DE VALOR / BENEFÍCIOS) -->
+    <section id="beneficios" class="benefits-section">
+        <h2>O que você vai receber para facilitar a sua rotina:</h2>
+        <p class="benefits-subtitle">Esqueça a dor de passar horas procurando conteúdos na internet. Nosso kit entrega tudo pronto, formatado e de aplicação imediata.</p>
+        
+        <div class="grid-container">
+            <!-- Benefício 1 -->
+            <div class="benefit-card">
+                <div class="icon-box">📊</div>
+                <h4>Slides Animados</h4>
+                <p>Aulas visuais completas e altamente interativas para prender a atenção dos alunos do início ao fim.</p>
+            </div>
+            <!-- Benefício 2 -->
+            <div class="benefit-card">
+                <div class="icon-box">📝</div>
+                <h4>Planos de Aula Prontos</h4>
+                <p>Planejamentos anuais perfeitamente estruturados e alinhados detalhadamente à BNCC 2026.</p>
+            </div>
+            <!-- Benefício 3 -->
+            <div class="benefit-card">
+                <div class="icon-box">✅</div>
+                <h4>Exercícios com Gabarito</h4>
+                <p>Listas de atividades e avaliações prontas para imprimir e aplicar, acompanhadas de resolução passo a passo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. PROVA SOCIAL / NÚMEROS -->
+    <section class="stats-section">
+        <div class="stats-table">
+            <div class="stats-col">
+                <span class="stats-num">+25.000</span>
+                <span class="stats-label">Professores Atendidos</span>
+            </div>
+            <div class="stats-col">
+                <span class="stats-num">+1.000</span>
+                <span class="stats-label">Slides e Atividades</span>
+            </div>
+            <div class="stats-col">
+                <span class="stats-num">3 Anos</span>
+                <span class="stats-label">Líder no Mercado Educacional</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. GRADE DE DISCIPLINAS COMPLETA -->
+    <section id="disciplinas" class="disciplines-section">
+        <h2>Materiais Disponíveis por Disciplina</h2>
+        <p class="benefits-subtitle" style="margin-bottom:10px;">Clique na opção desejada para adquirir o material e acessar o checkout seguro:</p>
+        
+        <!-- CATEGORIA: PORTUGUÊS E LITERATURA -->
+        <div class="category-title">📚 Língua Portuguesa, Literatura e Redação</div>
+        <div class="disciplines-table">
+            <div class="disciplines-row">
+                <div class="discipline-item" onclick="window.open('https://chk.eduzz.com/1599425?a=81985802', '_blank')">📝 Português<br><small>Planos de Aula</small></div>
+                <div class="discipline-item" onclick="window.open('https://chk.eduzz.com/1826450?a=81985802', '_blank')">📝 Português<br><small>Ensino Fundamental 2</small></div>
+                <div class="discipline-item" onclick="window.open('https://chk.eduzz.com/1762964?a=81985802', '_blank')">📝 Português<br><small>Ensino Médio</small></div>
+                <div class="discipline-item" onclick="window.open('https://chk.eduzz.com/1598345?a=81985802', '_blank')">📦 Português<br><small>COMBO Completo</small></div>
+            </div>
+            <div class="disciplines-row">
+                <div class="discipline-item" onclick="window.open('https://sun.eduzz.com/1428019?a=81985802', '_blank')">✍️ Redação<br><small>Português para Professores</small></div>
+                <div class="discipline-item" onclick="window.open('https://chk.eduzz.com/1763028?a=81985802', '_blank')">📖 Literatura<br><small>COMBO</small></div>
+                <div class="discipline-item" style="visibility: hidden;"></div>
+                <div class="discipline-item" style="visibility: hidden;"></div>
+            </div>
+        </div>
+
+        <!-- CATEGORIA: GEOGRAFIA E HISTÓRIA -->
+        <div class="category-title">🌍 Ciências Humanas (Geografia e História)</div>
+        <div class="disciplines-table">
+            <div class="disciplines-row">
+                <div class="discipline-item" onclick="window.open('https://chk.eduzz.com/1605910?a=81985802', '_blank')">🗺️ Geografia<br><small>Planos de Aula</small></div>
+                <div class="discipline-item" onclick="window.open('https://chk.eduzz.com/1820599?a=81985802', '_blank')">🗺️ Geografia<br><small>Fundamental 2</small></div>
+                <div class="discipline-item" onclick="window.open('https://chk.eduzz.com/1598347?a=81985802', '_blank')">📦 Geografia<br><small>COMBO Completo</small></div>
+                <div class="discipline-item" onclick="window.open('https://chk.eduzz.com/1875885?a=81985802', '_blank')">⏳ História<br><small>Ensino Fundamental 2</small></div>
+            </div>
+            <div class="disciplines-row">
+                <div class="discipline-item" onclick="window.open('https://chk.eduzz.com/1577816?a=81985802', '_blank')">📦 História<br><small>COMBO Completo</small></div>
+                <div class="discipline-item" style="visibility: hidden;"></div>
+                <div class="discipline-item" style="visibility: hidden;"></div>
+                <div class="discipline-item" style="visibility: hidden;"></div>
+            </div>
+        </div>
+
+        <!-- CATEGORIA: FILOSOFIA, SOCIOLOGIA E PROJETO DE VIDA -->
+        <div class="category-title">🧠 Filosofia, Sociologia e Projeto de Vida</div>
+        <div class="disciplines-table">
+            <div class="disciplines-row">
+                <div class="discipline-item" onclick="window.open('https://chk.eduzz.com/1736056?a=81985802', '_blank')">🏛️ Filo. e Socio.<br><small>COMBO 1</small></div>
+                <div class="discipline-item" onclick="window.open('https://chk.eduzz.com/1736056?a=81985802', '_blank')">🏛️ Filo. e Socio.<br><small>COMBO 2</small></div>
+                <div class="discipline-item" onclick="window.open('https://chk.eduzz.com/1762941?a=81985802', '_blank')">🏛️ Filo. e Socio.<br><small>COMBO 3</small></div>
+                <div class="discipline-item" onclick="window.open('https://chk.eduzz.com/2269886?a=81985802', '_blank')">🌱 Projeto de Vida<br><small>Para Professores</small></div>
+            </div>
+        </div>
+
+        <!-- CATEGORIA: EXATAS E BIOLÓGICAS -->
+        <div class="category-title">📐 Ciências da Natureza e Matemática</div>
+        <div class="disciplines-table">
+            <div class="disciplines-row">
+                <div class="discipline-item" onclick="window.open('https://chk.eduzz.com/1762971?a=81985802', '_blank')">📐 Matemática<br><small>COMBO</small></div>
+                <div class="discipline-item" onclick="window.open('https://chk.eduzz.com/1925431?a=81985802', '_blank')">🔬 Ciências<br><small>Ensino Fundamental 2</small></div>
+                <div class="discipline-item" onclick="window.open('https://chk.eduzz.com/1762960?a=81985802', '_blank')">🧬 Biologia<br><small>COMBO</small></div>
+                <div class="discipline-item" onclick="window.open('https://chk.eduzz.com/1762950?a=81985802', '_blank')">🧪 Química<br><small>COMBO</small></div>
+            </div>
+        </div>
+
+        <!-- CATEGORIA: IDIOMAS E EDUCAÇÃO FÍSICA -->
+        <div class="category-title">🇬🇧 Idiomas e Educação Física</div>
+        <div class="disciplines-table">
+            <div class="disciplines-row">
+                <div class="discipline-item" onclick="window.open('https://chk.eduzz.com/1762966?a=81985802', '_blank')">🇬🇧 Inglês<br><small>COMBO</small></div>
+                <div class="discipline-item" onclick="window.open('https://chk.eduzz.com/1762948?a=81985802', '_blank')">🇪🇸 Espanhol<br><small>COMBO 01</small></div>
+                <div class="discipline-item" onclick="window.open('https://chk.eduzz.com/1797580?a=81985802', '_blank')">⚽ Educação Física<br><small>Para Professores</small></div>
+                <div class="discipline-item" style="visibility: hidden;"></div>
+            </div>
+        </div>
+
+    </section>
+
+</body>
+</html>
